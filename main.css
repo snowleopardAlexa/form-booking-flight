@@ -1,0 +1,82 @@
+/* MAIN */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display:ital,wght@0,500;1,400&family=Poppins:wght@300&display=swap');
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+html {
+    font-family: 'Montserrat', sans-serif;   
+}
+
+.form-group {
+    position: relative;
+}
+
+#bookFlight .form-label {
+    position: absolute;
+    top: 6px;
+    left: 20px;
+}
+
+/* custom radio buttons */
+/* hide default browsers radio buttons */
+#formMain #tripType input {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+#bookFlight #tripType label {
+    display: block;
+    margin-bottom: .5em;
+    position: relative;
+    padding-top: 4px;
+    padding-left: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+#bookFlight #tripType input+span {
+    position: asbolute;
+    left: 2px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2 px solid orange;
+    border-radius: 50%;
+}
+
+#bookFlight #tripType input+span:after {
+    content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: #4fa3e3;
+	transform: translate(-50%, -50%);
+	transition: 0.2s all;
+}
+
+#bookFlight #tripType input:not(:checked)+span:after {
+    opacity: 0; 
+}
+
+#bookFlight #tripType input:checked+span:after {
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+@media screen and (min-width: 430px) {
+
+    #bookFlight #tripType label { 
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+
