@@ -162,6 +162,33 @@ input:focus, select:focus {
 	color: rgb(214, 76, 99);
 }
 
+/* hide default select arrows and browser renderings */
+#bookFlight select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* remove default select arrows in Firefox */
+select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+#bookFlight select.form-control+.select-arrow {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    width: 32px;
+    line-height: 32px;
+    height: 32px;
+    text-align: center;
+    pointer-events: none;
+    color:rgb(214, 76, 99);
+    font-size: .875em;
+}
+
 /* show flights button */
 #bookFlight .show-flights-btn {
 	color: #fff;
