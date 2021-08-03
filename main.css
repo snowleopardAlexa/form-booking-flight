@@ -53,18 +53,76 @@ header {
 	box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
 }
 
+/* custom radio buttons */
+/* hide default radio buttons */
+#formMain #tripType input {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+#bookFlight #tripType label { 
+	display: block;
+    margin-bottom: .5em;
+    position: relative;
+	padding-top: 4px;
+	padding-left: 30px;
+	font-weight: 700;
+	color: rgb(224, 137, 151);
+}
+
+#bookFlight #tripType input+span { 
+	position: absolute;
+	left: 2px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border: 2px solid rgb(224, 137, 151);
+	border-radius: 50%;
+}
+
+#bookFlight #tripType input+span:after { 
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	background-color: rgb(214, 76, 99);
+	transform: translate(-50%, -50%);
+	transition: 0.2s all;
+}
+
+#bookFlight #tripType input:not(:checked)+span:after {
+	opacity: 0;
+}
+
+#bookFlight #tripType input:checked+span:after {
+	opacity: 1;
+	width: 10px;
+	height: 10px;
+}
+
 .form-group { /* seperate out the 'rows' of form inputs */
-	/* position: relative; we will be positioning the labels a little bit differently for this form so we need relative on this item */
+	position: relative; /*we will be positioning the labels a little bit differently for this form so we need relative on this item */
 	margin-bottom: 20px;
+}
+
+#bookFlight .form-label {
+    position: absolute;
+	top: 6px;
+	left: 20px;
 }
 
 #bookFlight .form-control { /* style the trip duration radio buttons - style the inputs and select items */
 	background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
 	height: 60px;
 	padding: 24px 15px 0;
-	color: #191a1e;
-	border: 2px solid #dfe5e9;
-    font-family: 'Lato', sans-serif;
+	color: rgb(224, 137, 151);
+	border: 2px solid rgb(224, 137, 151);
 	font-size: 16px;
 	font-weight: 700;
     display: block;
@@ -123,13 +181,15 @@ input:focus, select:focus {
 }
 
 #callToAction h1 {
+    font-family: 'Playfair Display', serif;
 	font-size: 2.5em;
 /*	text-transform: uppercase;*/
 	color: rgb(243, 70, 98);
-	font-weight: 400;
 }
 
 #callToAction p {
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
 	font-size: 1.275em;
 	color: rgb(182, 31, 56);
 }
@@ -150,6 +210,11 @@ input:focus, select:focus {
         display: grid;
         grid-template-columns: 48.5% 48.5%;
         grid-column-gap: 3%;
+    }
+
+    #flightBook #tripType label { 
+        display: inline-block;
+        margin-bottom: 0;
     }
 
 }
