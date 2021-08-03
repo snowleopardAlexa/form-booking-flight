@@ -6,7 +6,8 @@ font-family: 'Playfair Display', serif;
 font-family: 'Poppins', sans-serif;
 */
 
-* { /* basic page reset */
+/* basic page reset */
+* { 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -18,10 +19,13 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-main { /* adjust overall page width and center content */
+/* adjust page width and center content */
+main { 
     margin: auto;
-    width: 90%; /* give page content some room to breathe*/
-    max-width: 1150px;
+    /* leave the space around the form */
+    width: 90%; 
+    /* max width of the entire form, important on large screens */
+    max-width: 1200px;
 }
 
 /*
@@ -41,7 +45,7 @@ header {
     padding: 2em;
 }
 
-#formMain { /* form container */
+#formMain { 
 /*	position: relative;*/
 	background: #fff;
 	margin: 1em auto;
@@ -73,7 +77,7 @@ input:focus, select:focus {
     box-shadow: 0 0 3px rgb(224, 137, 151);
 }
 
-/* style the placeholder text (light grey), still need vendor prefixs for a few browsers, including edge 12-18 */
+/* style the placeholder text, need vendor prefixs for a few browsers, including edge 12-18 */
 #bookFlight .form-control::-webkit-input-placeholder {
 	color: rgb(224, 137, 151);
 }
@@ -90,7 +94,8 @@ input:focus, select:focus {
 	background: rgb(224, 137, 151);
 }
 
-#bookFlight .form-label { /* style labels */ 
+/* labels */ 
+#bookFlight .form-label { 
 	font-weight: 700;
 	text-transform: uppercase;
 	line-height: 24px;
@@ -112,6 +117,7 @@ input:focus, select:focus {
 	text-transform: uppercase
 }
 
+/* left-side text display */
 #callToAction {
 	margin-top: 45px;
 }
